@@ -1,7 +1,6 @@
 //
 //  ChutesAndLaddersGame.hpp
 //
-
 #pragma once
 
 #include <stdio.h>
@@ -20,8 +19,7 @@ public:
    // TODO: implement the constructor with all your team members
    // constructor with the default value of 2 minimim players
    ChutesAndLaddersGame(int nPlayers = MIN_NUMBER_OF_PLAYERS);
-   
-
+  
    // TODO: implement the destructor
    // destructor
    ~ChutesAndLaddersGame();

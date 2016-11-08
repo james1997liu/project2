@@ -6,7 +6,6 @@
 
 #include <stdio.h>
 #include <string>
-
 #include "Die.hpp"
 #include "GameBoard.hpp"
 
@@ -15,22 +14,28 @@ using namespace std;
 class Player {
 public:
    // default constructor with no name
-   Player() : playerName("no name"), position(0), die() {}
+   Player() : playerName("no name"), postion(0), die() {}
    
    // parametrized constructor with name
    // player's initial position is at the figurative square 0
    // TO DO: implement this constructor
    Player(string name) {
+	   setName(name);
+	   postion = 0;
+	   die;
       // TODO: implement this function properly
-      throw std::logic_error("not implemented yet");
+      //throw std::logic_error("not implemented yet");
    }
    
    // copy constructor
    // Player should make player's own copy of the die
    // TO DO: implement Player's copy constructor
    Player(const Player &p) {
+	   playerName = p.getName();
+	   postion = p.getPostion();
+	   die = p.die;
       // TODO: implement this function properly
-      throw std::logic_error("not implemented yet");
+      //throw std::logic_error("not implemented yet");
    }
    
    // assignment constructor
@@ -43,9 +48,9 @@ public:
    
    // getters and setters
    void setName(string name) { playerName = name; }
-   void setPostion(int location) { position = location; }
+   void setPostion(int location) { postion = location; }
    string getName() const { return playerName; }
-   int getPostion() const { return position; }
+   int getPostion() const { return postion; }
    Die getDie() { return die; }
    
    // return player's new position after player rolls die
@@ -56,6 +61,6 @@ public:
    int rollDieAndMove();
 private:
    string playerName;
-   int position;
+   int postion;
    Die die;
 };

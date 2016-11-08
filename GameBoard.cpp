@@ -1,7 +1,6 @@
 //
 //  GameBoard.cpp
 //
-
 #include "GameBoard.hpp"
 
 // Build the gameboard
@@ -12,6 +11,10 @@
 // Otherwise, player stays put at the landing square
 // TO DO: implement this method
 void GameBoard::buildBoard() {
-   // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+	for (int i = 0; i < BOARD_SIZE; i++)
+	{
+		square[i] = checkChutesLadders(i);
+	}
+	// TODO: implement this function properly
+    //throw std::logic_error("not implemented yet");
 }

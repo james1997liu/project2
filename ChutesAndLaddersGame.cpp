@@ -11,10 +11,11 @@
 using namespace std;
 
 // TODO: implement the constructor with all your team members
-// constructor with the default value of a minimum players
+// constructor with the default value of  a minimum players
 ChutesAndLaddersGame::ChutesAndLaddersGame(int nPlayers) : winner("no winner") {
    // TODO: implement this function properly
    throw std::logic_error("not implemented yet");
+
 }
 
 // TODO: implement the destructor
@@ -47,22 +48,5 @@ void ChutesAndLaddersGame::playGame() {
    // TODO: implement this function properly
    //throw std::logic_error("not implemented yet");
 	GameBoard game;
-	while (winner == "There is no winner")
-	{
-		Player temp = playerList->front();
-		temp.setPosition(temp.rollDieAndMove());
-		temp.setPosition(gameBoard.checkChutesLadders(temp.getPosition()));
-
-		if (temp.getPostion(0 == WINNING_POSITION))
-		{
-			winner = temp.getName();
-			cout << "Winner is: " << winner << endl;
-			return;
-		}
-		if (temp.getPosition() != WINNING_POSITION
-		{
-			playerList->dequeu();
-			playerList->enqueue(temp);
-		}
-	}
+	
 }
