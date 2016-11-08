@@ -6,7 +6,6 @@
 //
 
 #pragma once
-
 #include <stdexcept>
 #include <algorithm> // needed for std::max in ExtendableVector::insert()
 

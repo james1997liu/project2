@@ -4,7 +4,6 @@
 
 #include <iostream>
 #include <string>
-
 #include "ChutesAndLaddersGame.hpp"
 #include "GameBoard.hpp"
 #include "Player.hpp"
@@ -46,6 +45,24 @@ void ChutesAndLaddersGame::resetGame() {
 //    - playGame returns after congratulating and printing the winner's name
 void ChutesAndLaddersGame::playGame() {
    // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
-   
+   //throw std::logic_error("not implemented yet");
+	GameBoard game;
+	while (winner == "There is no winner")
+	{
+		Player temp = playerList->front();
+		temp.setPosition(temp.rollDieAndMove());
+		temp.setPosition(gameBoard.checkChutesLadders(temp.getPosition()));
+
+		if (temp.getPostion(0 == WINNING_POSITION))
+		{
+			winner = temp.getName();
+			cout << "Winner is: " << winner << endl;
+			return;
+		}
+		if (temp.getPosition() != WINNING_POSITION
+		{
+			playerList->dequeu();
+			playerList->enqueue(temp);
+		}
+	}
 }

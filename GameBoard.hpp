@@ -3,9 +3,7 @@
 //
 
 #pragma once
-
 #include <stdexcept>
-
 #include "ExtendableVector.h"
 
 const int OUTSIDE_BOARD = -1;
