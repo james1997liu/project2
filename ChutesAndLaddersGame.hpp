@@ -44,6 +44,6 @@ private:
    
    string winner;       // the winner
    GameBoard gameBoard; // the game board
-
+   ArrayQueue<Player> playerList; 
    // TO DO: use ArrayQueue to store the players
 };

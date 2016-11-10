@@ -1,7 +1,6 @@
 //
 //  ChutesAndLaddersGame.cpp
 //
-
 #include <iostream>
 #include <string>
 #include "ChutesAndLaddersGame.hpp"
@@ -14,15 +13,20 @@ using namespace std;
 // constructor with the default value of  a minimum players
 ChutesAndLaddersGame::ChutesAndLaddersGame(int nPlayers) : winner("no winner") {
    // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+   //throw std::logic_error("not implemented yet");
 
 }
 
 // TODO: implement the destructor
 // destructor - dequeue players from the queue
-ChutesAndLaddersGame::~ChutesAndLaddersGame() {
+ChutesAndLaddersGame::~ChutesAndLaddersGame() 
+{
+	while (!playerList.empty())
+	{
+		playerList.dequeue();
+	}
    // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+   //throw std::logic_error("not implemented yet");
 }
 
 // TO DO: implement this function properly
@@ -30,8 +34,18 @@ ChutesAndLaddersGame::~ChutesAndLaddersGame() {
 //        (i.e., the list should be the same as in the constructor).
 //        Place all players at the figurative square zero
 void ChutesAndLaddersGame::resetGame() {
+	while (!playerList.empty())
+	{
+		playerList.dequeue();
+	}
+	Player James;
+	James.setName("James");
+	Player Ryan;
+	Ryan.setName("Ryan");
+	playerList.enqueue(James);
+	playerList.enqueue(Ryan);
    // TODO: implement this function properly
-   throw std::logic_error("not implemented yet");
+   //throw std::logic_error("not implemented yet");
 }
 
 // TO DO: implement this function properly
@@ -47,6 +61,22 @@ void ChutesAndLaddersGame::resetGame() {
 void ChutesAndLaddersGame::playGame() {
    // TODO: implement this function properly
    //throw std::logic_error("not implemented yet");
-	GameBoard game;
+	while (winner == "There is no winner")
+	{
+		Player temp = playerList.front();
+		temp.setPostion(temp.rollDieAndMove());
+		temp.setPostion(gameBoard.checkChutesLadders(temp.getPostion()));
+		if (temp.getPostion() == WINNING_POSITION)
+		{
+			winner = temp.getName();
+			cout << "The winner is " << winner << endl;
+			resetGame();
+		}
+		else if (temp.getPostion() != WINNING_POSITION)
+		{
+			playerList.dequeue();
+			playerList.enqueue(temp);
+		}
+	}
 	
 }

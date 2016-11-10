@@ -42,7 +42,7 @@ public:
    // Player should make player's own copy of the die
    // TO DO: implement Player's assignment constructor
    Player& operator=(const Player& p);
-   
+
    // destructor
    ~Player() { }
    
