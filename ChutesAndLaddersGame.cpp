@@ -14,7 +14,12 @@ using namespace std;
 ChutesAndLaddersGame::ChutesAndLaddersGame(int nPlayers) : winner("no winner") {
    // TODO: implement this function properly
    //throw std::logic_error("not implemented yet");
-
+	Player James;
+	James.setName("James");
+	Player Ryan;
+	Ryan.setName("Ryan");
+	playerList.enqueue(James);
+	playerList.enqueue(Ryan);
 }
 
 // TODO: implement the destructor
