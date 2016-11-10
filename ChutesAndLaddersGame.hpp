@@ -27,10 +27,14 @@ public:
    // accessors
    // TO DO: implement the accessor to get the number Of Players
    long getNumberOfPlayers() {
+	   return playerList.size();
       // TODO: implement this function properly
-      throw std::logic_error("not implemented yet");
+      //throw std::logic_error("not implemented yet");
    }
-   string getWinner() { return winner; }
+   string getWinner() 
+   { 
+	   return winner; 
+   }
    
    // TODO: implement this function properly
    // reset the game - (1) this will reset the position of each player to zero
